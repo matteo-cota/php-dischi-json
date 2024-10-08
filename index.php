@@ -25,7 +25,7 @@
                         <div class="card-body text-center">
                             <h5 class="card-title">{{ disco.title }}</h5>
                             <p class="card-text">{{ disco.author }}</p>
-                            <h5 class="text">{{ disco.year }}</span>
+                            <h5 class="text">{{ disco.year }}</h5>
                         </div>
                     </div>
                 </div>
@@ -34,23 +34,23 @@
     </div>
 
     <script>
-    const app = Vue.createApp({
-        data() {
-            return {
-                dischi: []
-            };
-        },
-        mounted() {
-            axios.get('api/dischi.php')
-                .then(response => {
-                    this.dischi = response.data;
-                })
-                .catch(error => {
-                    console.error("Errore durante il caricamento dei dati:", error);
-                });
-        }
-    });
-    app.mount('#app');
+        const app = Vue.createApp({
+            data() {
+                return {
+                    dischi: []
+                };
+            },
+            mounted() {
+                axios.get('api/dischi.php')
+                    .then(response => {
+                        this.dischi = response.data;
+                    })
+                    .catch(error => {
+                        console.error("Errore durante il caricamento dei dati:", error);
+                    });
+            }
+        });
+        app.mount('#app');
     </script>
 </body>
 
