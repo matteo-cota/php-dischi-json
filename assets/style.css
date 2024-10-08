@@ -1,0 +1,38 @@
+body{    
+    background-color:#192633;
+    
+}
+
+.bar{
+    background-color: #06131F;
+    height: 0px;
+    position: relative;
+    bottom: 33px;
+}
+
+.logo {
+    width: 45px;
+    position: relative;
+    bottom: 9px;
+    right: 600px;
+}
+
+.card {
+    color: aliceblue;
+    background-color: #0e1a27; 
+    border: none; 
+    transition: transform 0.3s;
+    margin: 30px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img-top {
+    width: 70%;
+    position: relative;
+    left: 60px;
+    top: 10px;
+}
+

@@ -13,7 +13,45 @@
 </head>
 
 <body>
+    <div id="app">
+        <header class="text-center my-2 py-5 bar">
+            <img src="img/logo-spotify.png" alt="Logo Spotify" class="logo">
+        </header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4" v-for="disco in dischi" :key="disco.title">
+                    <div class="card">
+                        <img :src="disco.poster" :alt="disco.title" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">{{ disco.title }}</h5>
+                            <p class="card-text">{{ disco.author }}</p>
+                            <h5 class="text">{{ disco.year }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <script>
+    const app = Vue.createApp({
+        data() {
+            return {
+                dischi: []
+            };
+        },
+        mounted() {
+            axios.get('api/dischi.php')
+                .then(response => {
+                    this.dischi = response.data;
+                })
+                .catch(error => {
+                    console.error("Errore durante il caricamento dei dati:", error);
+                });
+        }
+    });
+    app.mount('#app');
+    </script>
 </body>
 
 </html>
